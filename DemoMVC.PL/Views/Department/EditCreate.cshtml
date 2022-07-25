@@ -1,0 +1,10 @@
+﻿@model DepartmentVM
+<label asp-for="Name" >Department Name</label>
+    <input type="text" asp-for="Name" class=" px-2 form-control" />
+    <span asp-validation-for="Name" class="text-danger"></span>
+    <br />
+    <label  asp-for="Code" >Department Code</label>
+    <input type="text"  asp-for="Code" class=" px-2 form-control" />
+    <span asp-validation-for="Code" class="text-danger"></span>
+
+    <br />

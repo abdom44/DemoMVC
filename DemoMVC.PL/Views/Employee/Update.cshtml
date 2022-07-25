@@ -1,0 +1,32 @@
+﻿@model EmployeeVM
+
+@{
+    ViewData["Title"] = "Update";
+}
+@section JqueryUi{
+    <link  href="~/plugins/bootstrap-select/css/bootstrap-select.css" rel="stylesheet"  />
+    <link  href="~/jqueryui/themes/base/jquery-ui.css" rel="stylesheet" />
+}
+
+<div class="block-header">
+    <h2> update @Model.Name </h2>
+</div>
+
+<div asp-validation-summary="All" class="text-danger">
+
+</div>
+<form asp-action="update" asp-controller="Employee"   class="form-group">
+   @{await Html.RenderPartialAsync("~/Views/partials/Employee/EditCreate.cshtml");}
+    <input type="submit" value="Update"  class="btn btn-warning m-auto" />
+    <a asp-action="index" asp-controller="Employee" class="btn btn-info"> Return</a>
+</form>
+@section jqueryValidation{
+    <script src="~/jqueryui/jquery-ui.min.js"></script>
+    <script src="~/plugins/jquery-validation/jquery.validate.js"></script>
+    <script src="~/plugins/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+    <script>
+        $( function() {
+            $( "#datepicker" ).datepicker();
+        });
+    </script>
+}

@@ -1,0 +1,71 @@
+﻿
+@{
+    ViewData["Title"] = "Employee";
+}
+@model IEnumerable<EmployeeVM>
+@section bootstrapSelect {
+    <link rel="stylesheet" href="~/plugins/bootstrap-select/css/bootstrap-select.min.css"/>
+}
+
+
+<style>
+    th{
+        text-align:center;
+    }
+</style>
+<br />
+<br />
+
+<div class="block-header">
+    <h2>Employee</h2>
+</div>
+<a asp-action="create" class="btn btn-success" asp-controller="employee">Create new Employee</a>
+<br />
+<br />
+<form class="form-gruop" asp-action="index" asp-controller="employee">
+    <input type="search" placeholder="search By Name" name="searchValue" class="form-control "/>
+    <br />
+    <input type="submit" value="search" name="searchValue" class="btn btn-primary btn-block "/>
+</form>
+<table class=" table table-hover table-striped table-bordered text-center ">
+    <thead>
+       <tr>
+            <th>ID </th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Department</th>
+            <th>Deatails</th>
+            <th>Update</th>
+            <th>Delete</th>
+       </tr>
+    </thead>
+    <tbody>
+          @foreach (var item in Model)
+            {   
+                <tr>
+                    <td>
+                        @item.Id
+                    </td>
+                    <td>
+                        @item.Name
+                    </td>
+                    <td>
+                        @item.Email
+                    </td> 
+                    <td>
+                        @item.Department.Name
+                    </td>
+                    <td>
+                        <a asp-action="details"  asp-controller="Employee" asp-route-id="@item.Id" class="btn btn-info">Details</a>
+                    </td>   
+                    <td>
+                        <a asp-action="update"  asp-controller="Employee" asp-route-id="@item.Id" class="btn btn-warning">Update</a>
+                    </td>
+                    <td>
+                        <a asp-action="delete"  asp-controller="Employee" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
+                    </td>
+                </tr>
+
+            }
+    </tbody>
+</table>

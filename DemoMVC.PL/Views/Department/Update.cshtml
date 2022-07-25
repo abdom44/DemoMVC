@@ -1,0 +1,20 @@
+﻿@model DepartmentVM
+
+@{
+    ViewData["Title"] = "Update";
+}
+
+
+<div class="block-header">
+    <h2>update department</h2>
+</div>
+
+<form asp-action="update" asp-controller="Department"   class="form-group">
+   @{await Html.RenderPartialAsync("~/Views/Department/EditCreate.cshtml");}
+    <input type="submit" value="Update"  class="btn btn-warning m-auto" />
+    <a asp-action="index" asp-controller="department" class="btn btn-info"> Return</a>
+</form>
+@section jqueryValidation{
+    <script src="~/plugins/jquery-validation/jquery.validate.js"></script>
+    <script src="~/plugins/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}

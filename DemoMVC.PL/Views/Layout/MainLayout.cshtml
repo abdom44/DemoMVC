@@ -1,4 +1,8 @@
-﻿<!DOCTYPE html>
+﻿
+@{
+var Culture = System.Threading.Thread.CurrentThread.CurrentCulture.Name;
+}
+<!DOCTYPE html>
 
 <html>
 <head>
@@ -32,6 +36,13 @@
 
     <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
     <link href="~/css/themes/all-themes.css" rel="stylesheet" />
+
+    @if (Culture == "ar-EG") {
+        <link href="~/AR.css" rel="stylesheet" />
+    }
+    else{
+        <link href="~/EN.css" rel="stylesheet" />
+    }
 </head>
 
 <body class="theme-red">
@@ -88,97 +99,37 @@
                             <li class="header">NOTIFICATIONS</li>
                             <li class="body">
                                 <ul class="menu">
-                                    <li>
-                                        <a href="javascript:void(0);">
-                                            <div class="icon-circle bg-light-green">
-                                                <i class="material-icons">person_add</i>
-                                            </div>
-                                            <div class="menu-info">
-                                                <h4>12 new members joined</h4>
-                                                <p>
-                                                    <i class="material-icons">access_time</i> 14 mins ago
-                                                </p>
-                                            </div>
+                                    @*arabic*@
+                                    @if(Culture == "en-US")
+                                    {
+                                        <li>
+                                           <a class="dropdown-item d-flex justify-content-between"
+                                           href="@Url.Action("SetLanguage", "Language", new {
+                                                          culture = "ar-EG",
+                                                          returnUrl = Context.Request.Path + Context.Request.QueryString
+                                                      })">
+                                            <img src="~/images/Egypt.jpg" width="25" height="15" class="mt-1" />
+                                            <span>@SharedLocalizer["Arabic"]<span>
                                         </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0);">
-                                            <div class="icon-circle bg-cyan">
-                                                <i class="material-icons">add_shopping_cart</i>
-                                            </div>
-                                            <div class="menu-info">
-                                                <h4>4 sales made</h4>
-                                                <p>
-                                                    <i class="material-icons">access_time</i> 22 mins ago
-                                                </p>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0);">
-                                            <div class="icon-circle bg-red">
-                                                <i class="material-icons">delete_forever</i>
-                                            </div>
-                                            <div class="menu-info">
-                                                <h4><b>Nancy Doe</b> deleted account</h4>
-                                                <p>
-                                                    <i class="material-icons">access_time</i> 3 hours ago
-                                                </p>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0);">
-                                            <div class="icon-circle bg-orange">
-                                                <i class="material-icons">mode_edit</i>
-                                            </div>
-                                            <div class="menu-info">
-                                                <h4><b>Nancy</b> changed name</h4>
-                                                <p>
-                                                    <i class="material-icons">access_time</i> 2 hours ago
-                                                </p>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0);">
-                                            <div class="icon-circle bg-blue-grey">
-                                                <i class="material-icons">comment</i>
-                                            </div>
-                                            <div class="menu-info">
-                                                <h4><b>John</b> commented your post</h4>
-                                                <p>
-                                                    <i class="material-icons">access_time</i> 4 hours ago
-                                                </p>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0);">
-                                            <div class="icon-circle bg-light-green">
-                                                <i class="material-icons">cached</i>
-                                            </div>
-                                            <div class="menu-info">
-                                                <h4><b>John</b> updated status</h4>
-                                                <p>
-                                                    <i class="material-icons">access_time</i> 3 hours ago
-                                                </p>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0);">
-                                            <div class="icon-circle bg-purple">
-                                                <i class="material-icons">settings</i>
-                                            </div>
-                                            <div class="menu-info">
-                                                <h4>Settings updated</h4>
-                                                <p>
-                                                    <i class="material-icons">access_time</i> Yesterday
-                                                </p>
-                                            </div>
-                                        </a>
-                                    </li>
+
+                                        </li>
+                                    }
+                                    else
+                                    {
+                                         <li>
+                                           <a class="dropdown-item d-flex justify-content-between"
+                                           href="@Url.Action("SetLanguage", "Language", new {
+                                                          culture = "en-US",
+                                                          returnUrl = Context.Request.Path + Context.Request.QueryString
+                                                      })">
+                                            <img src="~/images/usa.jpg" width="25" height="15" class="mt-1" />
+                                            <span>@SharedLocalizer["English"]</span>
+                                            </a>
+
+                                       </li>
+                                    }
+                                    @*English*@
+                              
                                 </ul>
                             </li>
                             <li class="footer">
@@ -304,18 +255,18 @@
                     <li class="active">
                         <a asp-controller="home" asp-action="index" >
                             <i class="material-icons">home</i>
-                            <span>Home</span>
+                            <span>@SharedLocalizer["Home"]</span>
                         </a>
                     </li>
 
                     <li>
                         <a href="javascript:void(0);" class="menu-toggle">
                             <i class="material-icons">swap_calls</i>
-                            <span>Department Card</span>
+                            <span>@SharedLocalizer["Dcard"]</span>
                         </a>
                         <ul class="ml-menu">
                             <li>
-                                <a asp-action="index" asp-controller="department">Department</a>
+                                <a asp-action="index" asp-controller="department">@SharedLocalizer["Department"]</a>
                             </li>
                           
                         </ul>
@@ -323,11 +274,26 @@
                     <li>
                         <a href="javascript:void(0);" class="menu-toggle">
                             <i class="material-icons">swap_calls</i>
-                            <span>Employee Card</span>
+                            <span>@SharedLocalizer["EC"]</span>
                         </a>
                         <ul class="ml-menu">
                             <li>
-                                <a asp-action="index" asp-controller="employee">Employee</a>
+                                <a asp-action="index" asp-controller="employee">@SharedLocalizer["Employee"]</a>
+                            </li>
+                          
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);" class="menu-toggle">
+                            <i class="material-icons">mail</i>
+                            <span>@SharedLocalizer["Mail"]</span>
+                        </a>
+                        <ul class="ml-menu">
+                            <li>
+                                <a asp-action="SendMail" asp-controller="Mail">@SharedLocalizer["Send"]</a>
+                            </li>
+                            <li>
+                                <a asp-action="#" asp-controller="#">@SharedLocalizer["Inbox"]</a>
                             </li>
                           
                         </ul>
@@ -338,7 +304,7 @@
             <!-- Footer -->
             <div class="legal">
                 <div class="copyright">
-                    &copy;@DateTime.Now.Year<a href="javascript:void(0);">Abdelrahman Mohamed</a>.
+                    &copy;@DateTime.Now.Year<a href="javascript:void(0);">@SharedLocalizer["Signture"]</a>.
                 </div>
             </div>
             <!-- #Footer -->

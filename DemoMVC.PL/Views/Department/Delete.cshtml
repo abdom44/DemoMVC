@@ -1,6 +1,6 @@
 ﻿
 @{
-    ViewData["Title"] = "Delete";
+    ViewData["Title"] = @SharedLocalizer["Delete"];
 }
 <style>
     th{
@@ -15,7 +15,7 @@
     @{await Html.RenderPartialAsync("~/Views/Department/DeleteDetails.cshtml");}
 
 
-    <input type="submit" class="btn btn-danger my-5  " value="delete" />
-    <a asp-action="index" asp-controller="department" class="btn btn-info my-5"> Return</a>
+    <input type="submit" class="btn btn-danger my-5  " value="@SharedLocalizer["Delete"]" />
+    <a asp-action="index" asp-controller="department" class="btn btn-info my-5"> @SharedLocalizer["Return"]</a>
 
     </form>

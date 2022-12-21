@@ -1,9 +1,11 @@
 ﻿using AutoMapper;
+using DemoMVC.BL.Helper;
 using DemoMVC.BL.Intenfaces;
 using DemoMVC.BL.Model;
 using DemoMVC.DAL.Entity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using System.IO;
 
 namespace DemoMVC.PL.Controllers
 {
@@ -13,19 +15,23 @@ namespace DemoMVC.PL.Controllers
 
         private readonly IEmployee employee;
         private readonly IDepartment department;
+        private readonly ICity city;
+        private readonly IDistrict district;
         private readonly IMapper mapper;
 
         #endregion
 
         #region Ctor
 
-        public EmployeeController(IEmployee employee, IDepartment department, IMapper mapper)
+        public EmployeeController(IEmployee employee, IDepartment department, IMapper mapper , ICity city , IDistrict district)
         {
             this.employee = employee;
             this.department = department;
             this.mapper = mapper;
+            this.district = district;
+            this.city = city;
         }
-
+        
         #endregion
 
         #region Actions
@@ -76,6 +82,12 @@ namespace DemoMVC.PL.Controllers
 
                 if (ModelState.IsValid)
                 {
+
+
+
+                   
+                    obj.CVName = FileUploader.UploadeFile("Docs",obj.CV);
+                    obj.ImageName = FileUploader.UploadeFile("imgs", obj.Image);
                     var data = mapper.Map<Employee>(obj);
                     await employee.CreateAsync(data);
                     return RedirectToAction("Index");
@@ -144,6 +156,8 @@ namespace DemoMVC.PL.Controllers
 
             try
             {
+                FileUploader.RemoveFile("imgs", obj.ImageName);
+                FileUploader.RemoveFile("Docs", obj.CVName);
                 var data = mapper.Map<Employee>(obj);
                 await employee.DeleteAsync(data.Id);
                 return RedirectToAction("Index");
@@ -158,6 +172,39 @@ namespace DemoMVC.PL.Controllers
         #endregion
 
         #region Ajax Call
+        [HttpPost]
+        public async Task<JsonResult> GetCityByCounrtyId(int countyId)
+        {
+            var data  = await city.GetAsync(x=>x.CountryId==countyId);
+            
+            var res = mapper.Map<IEnumerable<CityVM>>(data);
+            
+            return Json(res);
+        }
+        [HttpPost]
+        public async Task<JsonResult> GetDistrictByCityId(int cityId)
+        {
+
+            var data =await district.GetAsync(x => x.CityId == cityId);
+            var res = mapper.Map<IEnumerable<DistrictVM>>(data);
+            return Json(res);
+        }
+        //[HttpPost]
+        //public async Task<JsonResult> GetCityDataByCountryId(int CntryId)
+        //{
+        //    var data = await city.GetAsync(a => a.CountryId == CntryId);
+        //    var result = mapper.Map<IEnumerable<CityVM>>(data);
+        //    return Json(result);
+        //}
+
+
+        //[HttpPost]
+        //public async Task<JsonResult> GetDistrictDataByCityId(int CtyId)
+        //{
+        //    var data = await district.GetAsync(a => a.CityId == CtyId);
+        //    var result = mapper.Map<IEnumerable<DistrictVM>>(data);
+        //    return Json(result);
+        //}
 
         #endregion
 

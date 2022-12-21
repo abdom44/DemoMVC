@@ -17,7 +17,7 @@
     <h2>@Model.Name </h2>
 </div>
 <form asp-action="delete" asp-controller="employee" >
-       @{await Html.RenderPartialAsync("~/Views/partials/Employee/EditCreate.cshtml");}
+       @{await Html.RenderPartialAsync("~/Views/partials/Employee/DetailsDelete.cshtml");}
 
 
     <input type="submit" class="btn btn-danger my-5  " value="delete" />

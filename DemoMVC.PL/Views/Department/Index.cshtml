@@ -1,6 +1,6 @@
 ﻿
 @{
-    ViewData["Title"] = "Department";
+    ViewData["Title"] = @SharedLocalizer["Department"];
 }
 @model IEnumerable<DepartmentVM>
 @section bootstrapSelect {
@@ -17,19 +17,19 @@
 <br />
 
 <div class="block-header">
-    <h2>Department</h2>
+    <h2>@SharedLocalizer["Department"]</h2>
 </div>
-<a asp-action="create" class="btn btn-success" asp-controller="department">Create new Department</a>
+<a asp-action="create" class="btn btn-success" asp-controller="department">@SharedLocalizer["CNE"]</a>
 <br />
 <br />
 <table class=" table table-hover table-striped table-bordered text-center ">
     <thead>
-        <th>ID </th>
-        <th>Name</th>
-        <th>Code</th>
-        <th>Deatails</th>
-        <th>Update</th>
-        <th>Delete</th>
+        <th>@SharedLocalizer["Id"] </th>
+        <th>@SharedLocalizer["Name"]</th>
+        <th>@SharedLocalizer["DptC"]</th>
+        <th>@SharedLocalizer["Deatails"]</th>
+        <th>@SharedLocalizer["Update"]</th>
+        <th>@SharedLocalizer["Delete"]</th>
     </thead>
     <tbody>
           @foreach (var item in Model)

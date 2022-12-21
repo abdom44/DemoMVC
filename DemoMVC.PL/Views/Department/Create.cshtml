@@ -1,20 +1,20 @@
 ﻿
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = @SharedLocalizer["Create"];
 }
 @model DepartmentVM
 
 
 <div class="block-header">
-    <h2>add department</h2>
+    <h2>@SharedLocalizer["CNE"]</h2>
 </div>
 <h1> @TempData["message"]</h1>
 
 <form asp-action="Create" asp-controller="Department"  method="post" class="form-group">
     @{await Html.RenderPartialAsync("~/Views/Department/EditCreate.cshtml");}
     <center>
-        <input type="submit" value="Save"  class="btn btn-primary m-auto" />
-        <a asp-action="index" asp-controller="department" class="btn btn-info"> Return</a>
+        <input type="submit" value=@SharedLocalizer["Save"]  class="btn btn-primary m-auto" />
+        <a asp-action="index" asp-controller="department" class="btn btn-info"> @SharedLocalizer["Return"]</a>
     </center>
 </form>
 @section jqueryValidation{

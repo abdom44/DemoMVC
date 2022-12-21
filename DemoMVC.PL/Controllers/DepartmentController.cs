@@ -67,7 +67,7 @@ namespace DemoMVC.PL.Controllers
         public async Task<IActionResult> Update(int id)
         {
             var d = await department.GetByIdAsync(id);
-            var result = mapper.Map<DepartmentVM>(d);
+            var result = mapper.Map<DepartmentVM>(d); 
             return View(result);
         }
         [HttpPost]

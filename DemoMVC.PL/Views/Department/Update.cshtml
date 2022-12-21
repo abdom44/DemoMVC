@@ -1,7 +1,7 @@
 ﻿@model DepartmentVM
 
 @{
-    ViewData["Title"] = "Update";
+    ViewData["Title"] = SharedLocalizer["Update"];
 }
 
 
@@ -11,8 +11,8 @@
 
 <form asp-action="update" asp-controller="Department"   class="form-group">
    @{await Html.RenderPartialAsync("~/Views/Department/EditCreate.cshtml");}
-    <input type="submit" value="Update"  class="btn btn-warning m-auto" />
-    <a asp-action="index" asp-controller="department" class="btn btn-info"> Return</a>
+    <input type="submit" value="@SharedLocalizer["Update"]"  class="btn btn-warning m-auto" />
+    <a asp-action="index" asp-controller="department" class="btn btn-info"> @SharedLocalizer["Return"]</a>
 </form>
 @section jqueryValidation{
     <script src="~/plugins/jquery-validation/jquery.validate.js"></script>

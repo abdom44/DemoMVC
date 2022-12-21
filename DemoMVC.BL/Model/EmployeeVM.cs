@@ -1,4 +1,5 @@
 ﻿using DemoMVC.DAL.Entity;
+using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -43,5 +44,11 @@ namespace DemoMVC.BL.Model
         public int DepatmentId { get; set; }
         [ForeignKey("DepatmentId")]
         public Department? Department { get; set; }
+        public int? DistrictId { get; set; }
+        public District? District { get; set; }
+        public string? CVName { get; set; }
+        public string? ImageName { get; set; }
+        public IFormFile CV { get; set; }
+        public IFormFile Image { get; set; }
     }
 }

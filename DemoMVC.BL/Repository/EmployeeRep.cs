@@ -22,9 +22,9 @@ namespace DemoMVC.BL.Repository
         public async Task<IEnumerable<Employee>> GetAsync(Expression<Func<Employee, bool>> filter = null)
         {
             if (filter == null)
-                return await db.Employee.Include("Department").ToListAsync();
+                return await db.Employee.Include("Department").Include("District").ToListAsync();
             else
-                return await db.Employee.Include("Department").Where(filter).ToListAsync();
+                return await db.Employee.Include("Department").Include("District").Where(filter).ToListAsync();
         }
 
         public async Task<Employee> GetByIdAsync(Expression<Func<Employee, bool>> filter)

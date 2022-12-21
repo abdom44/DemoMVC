@@ -21,7 +21,8 @@
 <div class="block-header">
     <h2>Employee</h2>
 </div>
-<a asp-action="create" class="btn btn-success" asp-controller="employee">Create new Employee</a>
+                        
+<a asp-action="create" class="btn btn-success" asp-controller="employee"><h2>@SharedLocalizer["CNE"]</h2></a>
 <br />
 <br />
 
@@ -31,7 +32,7 @@
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="card">
                     <div class="header">
-                        <h2>Welcome To Employee</h2>
+                        <h2>@SharedLocalizer["WTE"]</h2>
                         <ul class="header-dropdown m-r--5">
                             <li class="dropdown">
                                 <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
@@ -50,13 +51,16 @@
                             <table class="table table-bordered table-striped table-hover js-basic-example dataTable text-center">
                                 <thead>
                             <tr>
-                                <th>ID </th>
-                                <th>Name</th>
-                                <th>Email</th>
-                                <th>Department</th>
-                                <th>Deatails</th>
-                                <th>Update</th>
-                                <th>Delete</th>
+                                <th>@SharedLocalizer["ID"] </th>
+                                <th>@SharedLocalizer["Name"]</th>
+                                <th>@SharedLocalizer["Email"]</th>
+                                <th>@SharedLocalizer["Image"]</th>
+                                <th>@SharedLocalizer["CV"]</th>
+                                <th>@SharedLocalizer["Department"]</th>
+                                <th>@SharedLocalizer["District"]</th>
+                                <th>@SharedLocalizer["Details"]</th>
+                                <th>@SharedLocalizer["Update"]</th>
+                                <th>@SharedLocalizer["Delete"]</th>
                             </tr>
                         </thead>
                                 <tbody>
@@ -71,18 +75,27 @@
                                     </td>
                                     <td>
                                         @item.Email
+                                    </td>
+                                    <td>
+                                        <img src="~/Files/imgs/@item.ImageName" height="50px" width="50px">
+                                    </td>
+                                    <td>
+                                        <a href="~/Files/Docs/@item.CVName"class="btn btn-info" download="@SharedLocalizer["Download"]"> @SharedLocalizer["DC"]</a>
                                     </td> 
                                     <td>
                                         @item.Department.Name
                                     </td>
                                     <td>
-                                        <a asp-action="details"  asp-controller="Employee" asp-route-id="@item.Id" class="btn btn-info">Details</a>
-                                    </td>   
-                                    <td>
-                                        <a asp-action="update"  asp-controller="Employee" asp-route-id="@item.Id" class="btn btn-warning">Update</a>
+                                        @item.District.Name
                                     </td>
                                     <td>
-                                        <a asp-action="delete"  asp-controller="Employee" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
+                                        <a asp-action="details"  asp-controller="Employee" asp-route-id="@item.Id" class="btn btn-info">@SharedLocalizer["Details"]</a>
+                                    </td>   
+                                    <td>
+                                        <a asp-action="update"  asp-controller="Employee" asp-route-id="@item.Id" class="btn btn-warning">@SharedLocalizer["Update"]</a>
+                                    </td>
+                                    <td>
+                                        <a asp-action="delete"  asp-controller="Employee" asp-route-id="@item.Id" class="btn btn-danger">@SharedLocalizer["Delete"]</a>
                                     </td>
                                 </tr>
 

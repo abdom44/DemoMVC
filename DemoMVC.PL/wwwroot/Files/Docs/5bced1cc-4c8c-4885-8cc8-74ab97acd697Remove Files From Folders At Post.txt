@@ -1,0 +1,4 @@
+            if (File.Exists(Directory.GetCurrentDirectory() + FolderName + FileName))
+            {
+                File.Delete(Directory.GetCurrentDirectory() + FolderName + FileName);
+            }

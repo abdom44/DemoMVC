@@ -14,7 +14,7 @@ public class DepartmentVM
     [MinLength(3, ErrorMessage ="Min Length is 3" )]
     [MaxLength(50, ErrorMessage ="Max Length is 50" )]
     public string? Name { get; set; }
-    [Required(ErrorMessage = "Name Required")]
+    [Required(ErrorMessage = "Code Required")]
     [MinLength(3, ErrorMessage = "Min Length is 3")]
     [MaxLength(50, ErrorMessage = "Max Length is 50")]
     public string? Code { get; set; }

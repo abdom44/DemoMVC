@@ -504,3 +504,16 @@ F:\STUDY\projects\C#\MVC\DemoMVC\DemoMVC.PL\bin\Debug\net6.0\Microsoft.EntityFra
 F:\STUDY\projects\C#\MVC\DemoMVC\DemoMVC.PL\bin\Debug\net6.0\libman.json
 F:\STUDY\projects\C#\MVC\DemoMVC\DemoMVC.PL\bin\Debug\net6.0\AutoMapper.dll
 F:\STUDY\projects\C#\MVC\DemoMVC\DemoMVC.PL\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+F:\STUDY\projects\C#\MVC\DemoMVC\DemoMVC.PL\bin\Debug\net6.0\Microsoft.AspNetCore.JsonPatch.dll
+F:\STUDY\projects\C#\MVC\DemoMVC\DemoMVC.PL\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+F:\STUDY\projects\C#\MVC\DemoMVC\DemoMVC.PL\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
+F:\STUDY\projects\C#\MVC\DemoMVC\DemoMVC.PL\obj\Debug\net6.0\DemoMVC.PL.Language.SharedResource.resources
+F:\STUDY\projects\C#\MVC\DemoMVC\DemoMVC.PL\obj\Debug\net6.0\DemoMVC.PL.Language.SharedResource.ar-EG.resources
+F:\STUDY\projects\C#\MVC\DemoMVC\DemoMVC.PL\obj\Debug\net6.0\DemoMVC.PL.csproj.GenerateResource.cache
+F:\STUDY\projects\C#\MVC\DemoMVC\DemoMVC.PL\bin\Debug\net6.0\ar-EG\DemoMVC.PL.resources.dll
+F:\STUDY\projects\C#\MVC\DemoMVC\DemoMVC.PL\obj\Debug\net6.0\ar-EG\DemoMVC.PL.resources.dll
+F:\STUDY\projects\C#\MVC\DemoMVC\DemoMVC.PL\obj\Debug\net6.0\staticwebassets\msbuild.DemoMVC.PL.Microsoft.AspNetCore.StaticWebAssets.props
+F:\STUDY\projects\C#\MVC\DemoMVC\DemoMVC.PL\obj\Debug\net6.0\staticwebassets\msbuild.build.DemoMVC.PL.props
+F:\STUDY\projects\C#\MVC\DemoMVC\DemoMVC.PL\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.DemoMVC.PL.props
+F:\STUDY\projects\C#\MVC\DemoMVC\DemoMVC.PL\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.DemoMVC.PL.props
+F:\STUDY\projects\C#\MVC\DemoMVC\DemoMVC.PL\obj\Debug\net6.0\staticwebassets.pack.json

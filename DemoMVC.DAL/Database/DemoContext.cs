@@ -14,6 +14,9 @@ namespace DemoMVC.DAL.Database
         {
 
         }
+        public DbSet<Country> Country { get; set; }
+        public DbSet<City> City { get; set; }
+        public DbSet<District> District { get; set; }
         public DbSet<Department> Department { get; set; }
         public DbSet<Employee> Employee { get; set; }
     }

@@ -1,0 +1,45 @@
+﻿@model MailVM
+@{
+    ViewData["Title"] = "SendMail";
+}
+
+<div class="block-header">
+    <h2>Employee</h2>
+</div>
+
+
+<br />
+<br />
+<h3 class="text-danger">@TempData["msg"]</h3>
+<div asp-validation-summary="All"></div>
+<form class="form-group" asp-action="SendMail" asp-controller="Mail">
+
+     <label asp-for="Receiver">Receiver</label>
+    <input asp-for="Receiver" class="form-control" />
+    <span asp-validation-for="Receiver" class="text-danger "></span>
+
+    <br />
+    <br />
+
+    <label asp-for="Title">Title</label>
+    <input asp-for="Title" class="form-control" />
+    <span asp-validation-for="Title" class="text-danger "></span>
+    <br />
+    <br />
+    <label asp-for="Message">Message</label>
+    <textarea asp-for="Message" class="form-control" rows="4" ></textarea>
+    <span asp-validation-for="Message" class="text-danger"></span>
+    <center>
+        <input type="submit"  class="btn btn-success"/>
+    </center>
+</form>
+@section jqueryValidation{
+    <script src="~/jqueryui/jquery-ui.min.js"></script>
+    <script src="~/plugins/jquery-validation/jquery.validate.js"></script>
+    <script src="~/plugins/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+    <script>
+        $( function() {
+            $( "#datepicker" ).datepicker();
+        });
+    </script>
+}

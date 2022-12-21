@@ -1,0 +1,350 @@
+<html lang="en">
+  <head>
+<meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./styles/all.min.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap"
+      rel="stylesheet"
+    />
+
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital@1&display=swap" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="./styles/style.css" />
+
+    <title>Caverta - Restaurant Cafe</title>
+  </head>
+
+  <body>
+    <nav class="navbar  fixed-top navbar-expand-lg my-nav">
+      <div class="container-fluid">
+        <img src="https://matchthemes.com/demowp/caverta/wp-content/uploads/caverta-logo2.png" alt="">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mb-2 mb-lg-0 m-auto">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="#"
+                >home
+                <div class="underline"></div>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"
+                >menu
+                <div class="underline"></div
+              ></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"
+                >pages
+                <div class="underline"></div>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"
+                >reservation
+                <div class="underline"></div>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"
+                >blog
+                <div class="underline"></div>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"
+                >gallery
+                <div class="underline"></div>
+              </a>
+            </li>
+          </ul>
+
+          <div class="d-flex  justify-content-between align-items-center">
+            <div class="d-flex flex-xl-row flex-lg-column">
+            <i class="fa-brands fa-facebook-f icon"></i>
+            <i class="fa-brands fa-google-plus-g icon"></i>
+            <i class="fa-brands fa-twitter icon"></i>
+            <i class="fa-brands fa-instagram icon me-4 "></i>
+          </div>
+            <button class="book-btn text-uppercase ">book a table</button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <section>
+          <!-- Slider -->
+        <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active home" style="background-image:url('https://matchthemes.com/demowp/caverta/wp-content/uploads/reservation-page.jpg');"data-bs-interval="3000">
+                <div class="layer">
+                    <div class=" h-100 d-flex flex-column justify-content-center">
+                        <div class="slider-content d-none d-md-flex text-uppercase">
+                            <h5>dinning at</h5>
+                            <h1 class="text-capitalize">caverta</h1>
+                            <p class="text-capitalize">We offer a highly seasonal and continuously evolving tasting menu experience.</p>
+                            <a class="contactus">contact us</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+              <div class="carousel-item home" style="background-image: url('https://matchthemes.com/demowp/caverta/wp-content/uploads/slider-2.jpg');"  data-bs-interval="3000">
+                <div class="layer">
+                    <div class=" h-100 d-flex flex-column justify-content-center">
+                         <div class="slider-content d-none d-md-flex text-uppercase">
+                            <h5>events at</h5>
+                            <h1 class="text-capitalize">caverta</h1>
+                            <p class="text-capitalize">We offer a highly seasonal and continuously evolving tasting menu experience.</p>
+                            <a class="contactus">contact us</a>
+
+                        </div>
+                    </div>
+                </div>
+              </div>
+
+              <div class="carousel-item home"  style="background-image: url('https://matchthemes.com/demowp/caverta/wp-content/uploads/slider-3.jpg');" data-bs-interval="3000">
+                  <div class="layer">
+                    <div class=" h-100 d-flex flex-column justify-content-center">
+                         <div class="slider-content d-none d-md-flex text-uppercase">
+                            <h5>happy hours at</h5>
+                            <h1 class="text-capitalize">caverta</h1>
+                            <p class="text-capitalize">We offer a highly seasonal and continuously evolving tasting menu experience.</p>
+                            <a class="contactus">contact us</a>
+                        </div>
+                    </div>
+                </div>
+                  
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev"></button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next"></button>
+          </div>
+          
+    </section>
+
+    <section class="welcome-section container-fluid px-5 bg-light py-5">
+        <div class="row justify-content-center">
+            <div class="col-xl-3 col-md-6 col-sm-10 text-center">   <!--pb-md-0 pb-sm-5-->
+                <img src="https://matchthemes.com/demowp/caverta/wp-content/uploads/welcome-1.jpg" alt="">
+            </div>
+            <div class=" my-5 col-xl-6 col-md-12 col-sm-10 d-flex flex-column justify-content-center order-xl-0 order-first order-xl-0">
+                <div class="welcome-content w-100">
+                    <h2 class="section-title">- welcome -</h2>
+                    <p class="subtitle">Dining at Caverta</p>
+                    <p>For a truly memorable dining experience, cuisine and atmosphere are paired as thoughtfully as food and wine. Ut enim ad minim veniam, quis nostrud exercitation ullamco. Quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Animi, id est laborum et dolorum fuga. Nam libero tempore.
+                    </p>
+                    <button class="btn-style">book a table</button>
+                </div>
+            </div>
+            <div class="col-xl-3 col-md-6 col-sm-10 text-center">
+                <img src="https://matchthemes.com/demowp/caverta/wp-content/uploads/welcome-2.jpg" alt="">
+            </div>
+        </div>
+    </section>
+
+    <section class="come">
+        <div class="layer-come">
+            <p class="text-uppercase mb-5">- come and see -</p>
+            <h2>We create delicious experiences</h2>
+        </div>
+    </section>
+
+
+    <section class="container py-5 menu">
+        <div class="text-center">
+            <h2 class="section-title">- discover -</h2>
+            <p class="subtitle">Menu a la Cart</p>
+            <p>Explore texture, color and of course the ultimate tastes with our menu of the season. All the ingredients are fresh and carefully selected by our chefs. Enjoy an extraordinary dinning experience.</p>
+        </div>
+        <nav class="container pb-5">
+            <ul class="d-flex justify-content-center ">
+                <a><li>starters</li></a>
+                <a><li>main course</li></a>
+                <a><li>soups</li></a>
+                <a><li>dessert</li></a>
+            </ul>
+        </nav>
+        <div class="d-flex">
+        <div class="row pt-5 justify-content-between" id="menu-container">
+        </div>
+    </div>
+    </section>
+
+
+    <section class="come booking my-5">
+        <div class="layer-come ">
+            <p class="text-uppercase mb-5">- now booking-</p>
+            <h2>Private Dinners & Happy Hours</h2>
+        </div>
+    </section>
+
+
+    <section class="welcome-section container-fluid px-5 bg-light py-5 my-5">
+      <div class="row justify-content-center">
+          
+        <div class=" my-5 col-xl-6 col-md-12 col-sm-10 d-flex flex-column justify-content-center order-xl-0 order-first order-xl-0">
+          <div class="welcome-content w-100">
+              <h2 class="section-title">- behind the scenes -</h2>
+              <p class="subtitle text-capitalize">the team</p>
+              <p>For a truly memorable dining experience, cuisine and atmosphere are paired as thoughtfully as food and wine. Ut enim ad minim veniam, quis nostrud exercitation ullamco. Quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Animi, id est laborum et dolorum fuga. Nam libero tempore.
+              </p>
+              <button class="btn-style">find more</button>
+          </div>
+      </div>
+        <div class="col-xl-3 col-md-6 col-sm-10 text-center">  
+              <img src="https://matchthemes.com/demowp/caverta/wp-content/uploads/home-team-1.jpg" alt="">
+          </div>
+          
+          <div class="col-xl-3 col-md-6 col-sm-10 text-center">
+              <img src="https://matchthemes.com/demowp/caverta/wp-content/uploads/home-team-2.jpg" alt="">
+          </div>
+      </div>
+  </section>
+
+
+  <section class="come feedback my-5">
+    <div class="layer-come">
+        <p class="text-uppercase mb-5">- TESTIMONIALS -</p>
+        <h2 class="text-capitalize">What Clients Say</h2>
+        <h4 class="container">"Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Itaque earum rerum hic tenetur a sapiente delectus. Accusantium doloremque."</h4>
+        <div class="by text-center">
+          <div></div>
+          <h5 class="text-uppercase">laura foster</h5>
+          <p class="fw-lighter">agro</p>
+        </div>
+    </div>
+    
+</section>
+
+
+
+    <section class="container  contact">
+        <div class="text-center">
+            <h2 class="section-title">- contact -</h2>
+            <p class="subtitle">Make a Reservation</p>
+        </div>
+        <div class="row contact-content">
+            <div class="col-lg-6 col-sm-12">
+                <h2>private dining</h2>
+                <p>The Main Dining Room can accommodate up to 18 guests and requires either a half night or full night buyout. Reservations are available online 6 weeks before the date of the reservation.</p>
+            </div>
+            <div class="col-lg-6 col-sm-12">
+                <h2>private events</h2>
+                <p>Looking for an ideal venue? Look no further. Corporate dinners, special occasions, Chef’s Table, let us handle your needs. Reservations are available online 6 weeks before the date of the reservation.</p>
+            </div>
+        </div>
+
+        <div class="form text-center">
+            <div class="row">
+                <div class="col-lg-4 col-sm-12"><input class="form-control" type="text" name="" id="name" placeholder="Name"></div>
+                <div class="col-lg-4 col-sm-12"><input class="form-control" type="email" name="" id="email" placeholder="Email"></div>
+                <div class="col-lg-4 col-sm-12"><input class="form-control" type="text" name="" id="phone" placeholder="Phone">
+            </div>
+            <div>
+                <textarea class="form-control" name="" id="message" cols="30" rows="5" placeholder="Your Message"></textarea>
+            </div>
+          </div>
+        </div>
+        <div class="text-center my-5">
+        <button class="btn-style" id="btn-book">book now</button>
+      </div>
+
+    </section>
+
+    <footer class="container-fluid">
+        <div class=" container py-2">
+            <div class="row my-5">
+
+            <div class="col-xl-3 text-center col-md-6 col-sm-12">
+                <h2><img src="https://matchthemes.com/demowp/caverta/wp-content/uploads/caverta-logo2.png" alt=""></h2>
+                <p>For a truly memorable dining experience reserve in advance a table as soon as you can. Come and taste our remarkable food and wine.
+
+                </p>
+            </div>
+            <div class="col-xl-3 text-center col-md-6 col-sm-12">
+                <h2>address</h2>
+                <p>58 Ralph Ave
+                <br>New York, New York 1111</p>
+                <p>P: +1 800 000 111<br>
+                    E: contact@example.com
+                </p>
+            </div>
+            <div class="col-xl-3 text-center col-md-6 col-sm-12">
+                <h2>open hours</h2>
+                <p>Monday – Sunday <br>
+                    Lunch: 12PM – 2PM<br>
+                    Dinner: 6PM – 10PM
+                </p>
+                <p>Happy Hours: 4PM – 6PM
+                </p>
+            </div>
+            <div class="col-xl-3 text-center col-md-6 col-sm-12">
+                <h2>more info</h2>
+                <p><a href="#">Careers</a></p>
+                <p><a href="#">Get in Touch</a></p>
+                <p><a href="#">Privacy Policy</a></p>
+            </div>
+        </div>
+        <div class="d-flex justify-content-between" >
+            <p class="designedby">2022 © Caverta . Designed by <a href="#">Theme Forest</a></p>
+            <div>
+                <i class="fa-brands fa-facebook-f icon"></i>
+                <i class="fa-brands fa-google-plus-g icon"></i>
+                <i class="fa-brands fa-twitter icon"></i>
+                <i class="fa-brands fa-instagram icon"></i>
+             </div>
+        </div>
+        </div>
+    </footer>
+
+
+     <!-- <footer class="imgs">
+        <div class="d-flex">
+        <div class="col-md-6 col-sm-12 d-flex">
+          <div class="col-3"><img src="https://matchthemes.com/demowp/caverta/wp-content/uploads/sb-instagram-feed-images/157688896_121267609928522_4120224871425394273_nlow.jpg" alt=""></div>
+          <div class="col-3"><img src="https://matchthemes.com/demowp/caverta/wp-content/uploads/sb-instagram-feed-images/156752765_825864221333119_8378680595886233890_nlow.jpg" alt=""></div>
+          <div class="col-3"><img src="https://matchthemes.com/demowp/caverta/wp-content/uploads/sb-instagram-feed-images/157033874_466636564535109_5007992302534056254_nlow.jpg" alt=""></div>
+          <div class="col-3"><img src="https://matchthemes.com/demowp/caverta/wp-content/uploads/sb-instagram-feed-images/156675538_472344493979926_1658538045818179352_nlow.jpg" alt=""></div>
+        </div>
+        <div class="col-6 d-flex d-md-flex d-sm-none">
+          <div class="col-3"><img src="https://matchthemes.com/demowp/caverta/wp-content/uploads/sb-instagram-feed-images/157206067_138247718105219_1653272933139895738_nlow.jpg" alt=""></div>
+          <div class="col-3"><img src="https://matchthemes.com/demowp/caverta/wp-content/uploads/sb-instagram-feed-images/156709840_2826515010897261_1319274575472745811_nlow.jpg" alt=""></div>
+          <div class="col-3"><img src="https://matchthemes.com/demowp/caverta/wp-content/uploads/sb-instagram-feed-images/157197652_3742380705861091_6557079344600179294_nlow.jpg" alt=""></div>
+          <div class="col-3 "><img src="https://matchthemes.com/demowp/caverta/wp-content/uploads/sb-instagram-feed-images/156746314_428790565078758_1547459469142072633_nlow.jpg" alt=""></div>
+          </div>
+        </div>
+    </footer> -->
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="./js/main.js" type="module"></script>
+
+  </body>
+</html>

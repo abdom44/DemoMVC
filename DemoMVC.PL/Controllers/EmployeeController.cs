@@ -89,13 +89,13 @@ namespace DemoMVC.PL.Controllers
                     obj.CVName = FileUploader.UploadeFile("Docs",obj.CV);
                     obj.ImageName = FileUploader.UploadeFile("imgs", obj.Image);
                     var data = mapper.Map<Employee>(obj);
-                    await employee.CreateAsync(data);
+                    await employee.CreateAsync(data);   
                     return RedirectToAction("Index");
                 }
 
                 TempData["Msg"] = "Validation Error";
                 return View(obj);
-            }
+            } 
             catch (Exception ex)
             {
                 TempData["Msg"] = ex.Message;

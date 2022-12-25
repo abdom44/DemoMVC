@@ -33,10 +33,11 @@ namespace DemoMVC.BL.Repository
             return data;
         }
 
-        public async Task CreateAsync(Employee obj)
+        public async Task<Employee> CreateAsync(Employee obj)
         {
             await db.Employee.AddAsync(obj);
             await db.SaveChangesAsync();
+            return await db.Employee.Where(x=>x.Equals(obj)).FirstOrDefaultAsync();
         }
 
 

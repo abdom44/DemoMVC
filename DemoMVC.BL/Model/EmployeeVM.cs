@@ -48,7 +48,7 @@ namespace DemoMVC.BL.Model
         public District? District { get; set; }
         public string? CVName { get; set; }
         public string? ImageName { get; set; }
-        public IFormFile CV { get; set; }
-        public IFormFile Image { get; set; }
+        public IFormFile? CV { get; set; }
+        public IFormFile? Image { get; set; }
     }
 }

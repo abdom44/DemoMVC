@@ -295,7 +295,18 @@ var Culture = System.Threading.Thread.CurrentThread.CurrentCulture.Name;
                             <li>
                                 <a asp-action="#" asp-controller="#">@SharedLocalizer["Inbox"]</a>
                             </li>
-                          
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);" class="menu-toggle">
+                            <i class="material-icons">login</i>
+                            <span>Register</span>
+                        </a>
+                        <ul class="ml-menu">
+                            <li>
+                                <a asp-action="Registration" asp-controller="Account">Sign Up</a>
+                            </li>
+                            
                         </ul>
                     </li>
                 </ul>

@@ -1,10 +1,12 @@
 ﻿using DemoMVC.BL.Helper;
 using DemoMVC.BL.Model;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
 using System.Net.Mail;
 namespace DemoMVC.PL.Controllers
 {
+    [Authorize]
     public class MailController : Controller
     {
         public IActionResult SendMail()

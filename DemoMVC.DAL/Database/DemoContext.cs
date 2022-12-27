@@ -1,4 +1,7 @@
 ﻿using DemoMVC.DAL.Entity;
+using DemoMVC.DAL.Extends;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -8,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace DemoMVC.DAL.Database
 {
-    public class DemoContext:DbContext
+    public class DemoContext : IdentityDbContext<ApplicationUser>
     {
         public DemoContext(DbContextOptions<DemoContext> opt) :base(opt)
         {

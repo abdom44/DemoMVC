@@ -3,12 +3,15 @@ using DemoMVC.BL.Helper;
 using DemoMVC.BL.Intenfaces;
 using DemoMVC.BL.Model;
 using DemoMVC.DAL.Entity;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System.IO;
 
 namespace DemoMVC.PL.Controllers
+
 {
+    [Authorize]
     public class EmployeeController : Controller
     {
         #region Fields

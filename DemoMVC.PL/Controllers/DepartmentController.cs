@@ -3,11 +3,13 @@ using DemoMVC.BL.Intenfaces;
 using DemoMVC.BL.Model;
 using DemoMVC.BL.Repository;
 using DemoMVC.DAL.Entity;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 
 namespace DemoMVC.PL.Controllers
 {
+    [Authorize]
     public class DepartmentController : Controller
     {
         private readonly IDepartment department;

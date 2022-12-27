@@ -8,6 +8,9 @@ using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json.Serialization;
 using System.Globalization;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Identity;
+using DemoMVC.DAL.Extends;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -22,8 +25,6 @@ builder.Services.AddControllersWithViews().AddNewtonsoftJson(opt => {
     options.DataAnnotationLocalizerProvider = (type, factory) =>
         factory.Create(typeof(SharedResource));
 });
-
-
 
 builder.Services.AddScoped<IDepartment, DepartmentRep >();
 builder.Services.AddScoped<IEmployee, EmployeeRep >();
@@ -43,6 +44,39 @@ options.UseSqlServer(connectionString));
 //auto mapper
 builder.Services.AddAutoMapper(x => x.AddProfile(new DomainProfile()));
 
+// authentication
+//expire date for stay login
+builder.Services.AddAuthentication().AddIdentityCookies(o =>
+{
+    o.TwoFactorRememberMeCookie.Configure(a => a.Cookie.Expiration = new TimeSpan(10, 00, 00, 00));
+});
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+.AddCookie(CookieAuthenticationDefaults.AuthenticationScheme,
+    options =>
+    {
+        options.LoginPath = new PathString("/Account/Login");
+        options.AccessDeniedPath = new PathString("/Account/Login");
+    });
+
+
+
+//generate token configuration
+builder.Services.AddIdentityCore<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true)
+                .AddEntityFrameworkStores<DemoContext>()
+                .AddTokenProvider<DataProtectorTokenProvider<ApplicationUser>>(TokenOptions.DefaultProvider);
+
+
+builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options =>
+{
+    // Default Password settings.
+    options.User.RequireUniqueEmail = true;
+    options.Password.RequireDigit = true;
+    options.Password.RequireLowercase = true;
+    options.Password.RequireNonAlphanumeric = true;
+    options.Password.RequireUppercase = true;
+    options.Password.RequiredLength = 8;
+    options.Password.RequiredUniqueChars = 0;
+}).AddEntityFrameworkStores<DemoContext>();
 
 var app = builder.Build();
 
@@ -74,11 +108,11 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
-
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Account}/{action=Login}/{id?}");
 
 app.Run();

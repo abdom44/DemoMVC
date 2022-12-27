@@ -146,7 +146,7 @@ namespace DemoMVC.API.Controllers
 
         [HttpDelete]
         [Route("~/api/employee/DeleteEmployee/{id}")]
-        public async Task<IActionResult> PutEmployee(int id)
+        public async Task<IActionResult> DeleteEmployee(int id)
         {
 
 

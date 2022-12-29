@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using DemoMVC.DAL.Extends;
+using Microsoft.AspNetCore.Mvc;
 
 namespace DemoMVC.PL.Controllers
 {
@@ -15,7 +16,12 @@ namespace DemoMVC.PL.Controllers
         {
             return View();
         }
+        [HttpPost]
+        public IActionResult Registeration()
+        {
 
+            return View();
+        }
 
 
         #endregion
